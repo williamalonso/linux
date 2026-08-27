@@ -4,6 +4,26 @@
 
 ---
 
+## Índice
+
+- [Especificações do Sistema](#especificações-do-sistema)
+- [1. Hibernar](#1-hibernar)
+  - [Como funciona](#como-funciona)
+  - [Swapfile](#swapfile)
+  - [Parâmetros do GRUB](#parâmetros-do-grub)
+  - [Initramfs](#initramfs)
+  - [Polkit](#polkit-permissão-para-hibernar-sem-sudo)
+  - [Atualizar tudo após mudanças](#atualizar-tudo-após-mudanças)
+  - [Hibernar pelo terminal](#hibernar-pelo-terminal)
+  - [Atalho no desktop](#atalho-no-desktop-botão-direito)
+- [2. Bateria — Controle de Carga](#2-bateria--controle-de-carga-lenovo-ideapad)
+- [3. Dual Boot](#3-dual-boot)
+- [4. NVM](#4-nvm-node-version-manager)
+- [5. Nemo — Ações de Contexto](#5-nemo--ações-de-contexto-botão-direito)
+- [Referência Rápida](#referência-rápida)
+
+---
+
 ## Especificações do Sistema
 
 - **OS:** Linux Mint 22.3 (Zena) — base Ubuntu Noble
