@@ -1,6 +1,6 @@
 # Configurações do Sistema — Linux Mint 22.3 (Zena)
 
-> Documento de referência pessoal. Última atualização: 27/08/2026.
+> Documento de referência pessoal. Última atualização: 28/08/2026.
 
 ---
 
@@ -20,6 +20,7 @@
 - [3. Dual Boot](#3-dual-boot)
 - [4. NVM](#4-nvm-node-version-manager)
 - [5. Nemo — Ações de Contexto](#5-nemo--ações-de-contexto-botão-direito)
+- [6. Bluetooth — Conexão Automática](#6-bluetooth--conexão-automática)
 - [Referência Rápida](#referência-rápida)
 
 ---
@@ -188,6 +189,36 @@ Clique com botão direito em qualquer pasta no Nemo e a opção "Abrir com VS Co
 
 ---
 
+## 6. Bluetooth — Conexão Automática
+
+Dispositivo: **Echo Pop-1QA** (`98:CC:F3:79:CB:26`)
+
+Conexão automática configurada via autostart do Cinnamon. A cada login, o sistema aguarda 5 segundos e conecta automaticamente.
+
+### Arquivo de autostart
+
+`~/.config/autostart/bt-connect.desktop`
+
+```ini
+[Desktop Entry]
+Type=Application
+Name=BT AutoConnect
+Exec=bash -c 'sleep 5 && bluetoothctl connect 98:CC:F3:79:CB:26'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+```
+
+> Se o dispositivo demorar mais para ficar disponível, aumentar o `sleep 5` para `sleep 10`.
+
+### Conectar manualmente
+
+```bash
+bluetoothctl connect 98:CC:F3:79:CB:26
+```
+
+---
+
 ## Referência Rápida
 
 | O que fazer | Comando |
@@ -200,3 +231,4 @@ Clique com botão direito em qualquer pasta no Nemo e a opção "Abrir com VS Co
 | Atualizar GRUB | `sudo update-grub` |
 | Atualizar initramfs | `sudo update-initramfs -u` |
 | Abrir pasta com VS Code (botão direito) | Nemo action em `~/.local/share/nemo/actions/` |
+| Conectar Echo Pop manualmente | `bluetoothctl connect 98:CC:F3:79:CB:26` |
